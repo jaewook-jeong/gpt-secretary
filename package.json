@@ -1,0 +1,8 @@
+{
+  "name": "gpt-secretary",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jaewook-jeong/gpt-secretary.git",
+  "author": "jaewook-jeong <dnrlwo11@gmail.com>",
+  "license": "MIT"
+}
