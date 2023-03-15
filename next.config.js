@@ -1,28 +1,11 @@
 /** @type {import('next').NextConfig} */
 const withPlugins = require("next-compose-plugins");
-const withPWA = require("next-pwa");
-
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  compiler: {
-    emotion: {
-      sourceMap: true,
-      autoLabel: 'dev-only',
-    },
-  }
-}
-
-module.exports = withPlugins(
-	[
-		[
-			withPWA,
-			{
-				pwa: {
-					dest: "public",
-				},
-			},
-		],
-	],
-	nextConfig
-);
+const withPWA = require("next-pwa")({
+	disable: process.env.NODE_ENV === "development",
+	dest: "public",
+	register: true,
+	skipWaiting: false,
+  });
+  const nextConfig = withPWA({});
+  
+  module.exports = nextConfig;

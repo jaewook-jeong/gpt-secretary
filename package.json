@@ -2,6 +2,16 @@
   "name": "gpt-secretary",
   "version": "0.1.0",
   "private": true,
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.tsx": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,14 +27,26 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.10.6",
+    "@emotion/eslint-plugin": "^11.10.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@next/eslint-plugin-next": "^12.2.5",
+    "@types/eslint": "^8",
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.36.0",
+    "@typescript-eslint/parser": "^5.36.0",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
-    "next-compose-plugins": "^2.2.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-import-resolver-typescript": "^3.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-next": "^0.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.7",
+    "lint-staged": "^13.2.0",
     "typescript": "4.9.5"
   }
 }
