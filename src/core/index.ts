@@ -1,8 +1,8 @@
 import { getJaewookSecretary } from './gpt';
 import { useChattingActions } from './store';
 
-const sendMessage = async (content: string) => {
-  const { pushUserMessage, pushSystemMessage, setError } = useChattingActions;
+export const sendMessage = async (content: string) => {
+  const { pushUserMessage, pushSystemMessage, setError } = useChattingActions();
   pushUserMessage(content);
   try {
     const res = await getJaewookSecretary(content);

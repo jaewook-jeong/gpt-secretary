@@ -19,7 +19,6 @@ export const getJaewookSecretary = async (content: string): Promise<string> => {
         role: 'user',
         content,
       },
-      { role: 'assistant', content: 'Q: ' },
     ],
   };
 
