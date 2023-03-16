@@ -2,9 +2,10 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import localFont from 'next/font/local';
 
-import '@/styles/global-css.css';
 import { Layout } from '@/components/Layout';
 import SEO from '@/components/SEO';
+
+import '@/styles/global-css.css';
 
 const font = localFont({ src: './SpoqaHanSansNeo-Regular.woff2' });
 
