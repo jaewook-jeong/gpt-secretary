@@ -30,10 +30,15 @@ const Header = () => {
       </UserInfo>
       <IconWapper>
         <ThemeToggle />
-        <a href="https://github.com/jaewook-jeong" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/jaewook-jeong"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Github"
+        >
           <FiGithub size={35} />
         </a>
-        <a href="mailto:dnrlwo11@gmail.com">
+        <a href="mailto:dnrlwo11@gmail.com" aria-label="Gmail">
           <FiMail size={40} />
         </a>
         <FiMoreVertical />

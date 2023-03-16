@@ -19,7 +19,7 @@ class MyDocument extends Document {
       document.body.dataset.theme = getUserPreference();
     `;
     return (
-      <Html>
+      <Html lang="ko">
         <Head>
           <link
             href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap"
