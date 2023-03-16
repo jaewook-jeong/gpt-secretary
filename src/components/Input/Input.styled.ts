@@ -29,7 +29,7 @@ export const ChatTextArea = styled.textarea`
   min-height: 84px;
   max-height: 200px;
   border-radius: 5px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   outline: none;
   border: 0;
   background-color: var(--background-color-primary);
@@ -56,6 +56,10 @@ export const SendButton = styled.button`
   background-color: var(--point-color-0);
   border: 0;
   cursor: pointer;
+  :disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 
   ${mediaQuery(TABLET_BREAK_POINT)} {
     width: 30px;

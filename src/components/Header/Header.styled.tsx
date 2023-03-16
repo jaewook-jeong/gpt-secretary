@@ -12,6 +12,8 @@ export const Wrapper = styled.nav`
   padding: 20px;
   font-size: 1.8rem;
   color: var(--gnb-font-color);
+  border-radius: 0 0 20px 20px;
+  box-shadow: inset 0 -2px 0 var(--box-shadow-color);
   svg {
     color: var(--gnb-icon-color);
   }

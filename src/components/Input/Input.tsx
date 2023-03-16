@@ -33,14 +33,16 @@ const Input = () => {
     }
   }, []);
 
+  const disabled = hasError || isWaiting;
   return (
     <Wrapper>
       <ChatTextArea
         ref={textareaRef}
         onChange={onChange}
         placeholder="저에 대해 궁금한걸 물어보세요!"
+        disabled={disabled}
       />
-      <SendButton type="button" onClick={onSubmit} disabled={hasError || isWaiting}>
+      <SendButton type="button" onClick={onSubmit} disabled={disabled}>
         <FiNavigation size={30} color="#fefefe" />
       </SendButton>
     </Wrapper>

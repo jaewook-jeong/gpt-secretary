@@ -31,15 +31,19 @@
     --gnb-icon-color: #9a9a9a;
     --box-shadow-color: #e8eaed;
     --text-color: #424242;
+    --user-message-color: #fefefe;
+    --system-message-color: #424242;
   }
   
   body[data-theme="dark"] {
     --background-color-primary: #323232;
-    --background-color-secondary: #545454;
+    --background-color-secondary: #444444;
     --point-color-0: #B05B00;
     --point-color-1: #FC8505;
     --gnb-font-color: #fefefe;
     --gnb-icon-color: #6c6c6c;
     --box-shadow-color: #2a2a2a;
     --text-color: #fefefe;
+    --user-message-color: #fefefe;
+    --system-message-color: #fefefe;
   }
