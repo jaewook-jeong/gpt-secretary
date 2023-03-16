@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 
 import '@/styles/global-css.css';
 import { Layout } from '@/components/Layout';
+import SEO from '@/components/SEO';
 
 const font = localFont({ src: './SpoqaHanSansNeo-Regular.woff2' });
 
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </Head>
+      <SEO />
       <Layout className={font.className}>
         <Component {...pageProps} />
       </Layout>
