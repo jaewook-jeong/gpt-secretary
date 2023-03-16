@@ -2,7 +2,15 @@ import dynamic from 'next/dynamic';
 import NextImage from 'next/image';
 import { FiGithub, FiMail, FiMoreVertical, FiUser } from 'react-icons/fi';
 
-import { Wrapper, Image, UserInfo, OnlineDot, IconWapper } from './Header.styled';
+import {
+  Wrapper,
+  Image,
+  MobileImage,
+  UserInfo,
+  OnlineDot,
+  IconWapper,
+  EnglishName,
+} from './Header.styled';
 
 const ThemeToggle = dynamic(() => import('./ThemeToggle').then(({ ThemeToggle }) => ThemeToggle), {
   ssr: false,
@@ -20,8 +28,18 @@ const Header = () => {
             height={75}
           />
         </Image>
+        <MobileImage>
+          <NextImage
+            src="https://avatars.githubusercontent.com/u/56660101?v=4"
+            alt="chris`s mobile size profile"
+            width={50}
+            height={50}
+          />
+        </MobileImage>
         <div>
-          <div>정재욱(chris)</div>
+          <div>
+            정재욱 <EnglishName>(chris)</EnglishName>
+          </div>
           <OnlineDot>
             <FiUser />
             online

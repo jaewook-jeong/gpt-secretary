@@ -1,3 +1,5 @@
+import { TABLET_BREAK_POINT } from '@/constants';
+import { mediaQuery } from '@/styles/mediaQuery';
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.nav`
@@ -10,11 +12,15 @@ export const Wrapper = styled.nav`
   padding: 20px;
   background-color: var(--background-color-primary);
   border-radius: 0 0 30px 30px;
-  box-shadow: inset 0 -2px 0 #e8eaed;
+  box-shadow: inset 0 -2px 2px #e8eaed;
   font-size: 1.8rem;
   color: var(--gnb-font-color);
   svg {
     color: var(--gnb-icon-color);
+  }
+  ${mediaQuery(TABLET_BREAK_POINT)} {
+    font-size: 1.5rem;
+    padding: 10px 15px;
   }
 `;
 
@@ -23,6 +29,19 @@ export const Image = styled.div`
   height: 75px;
   width: 75px;
   border-radius: 100%;
+
+  ${mediaQuery(TABLET_BREAK_POINT)} {
+    display: none;
+  }
+`;
+
+export const MobileImage = styled(Image)`
+  display: none;
+  height: 50px;
+  width: 50px;
+  ${mediaQuery(TABLET_BREAK_POINT)} {
+    display: initial;
+  }
 `;
 
 export const UserInfo = styled.div`
@@ -30,6 +49,16 @@ export const UserInfo = styled.div`
   flex-direction: row;
   align-items: center;
   column-gap: 20px;
+
+  ${mediaQuery(TABLET_BREAK_POINT)} {
+    column-gap: 10px;
+  }
+`;
+
+export const EnglishName = styled.span`
+  ${mediaQuery(TABLET_BREAK_POINT)} {
+    display: none;
+  }
 `;
 
 export const OnlineDot = styled.div`
@@ -53,5 +82,9 @@ export const IconWapper = styled.div`
   a {
     display: flex;
     align-items: center;
+  }
+
+  ${mediaQuery(TABLET_BREAK_POINT)} {
+    column-gap: 15px;
   }
 `;
