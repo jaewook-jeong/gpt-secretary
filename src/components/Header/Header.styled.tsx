@@ -3,16 +3,13 @@ import { mediaQuery } from '@/styles/mediaQuery';
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.nav`
+  flex-shrink: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: auto;
   height: var(--gnbHeight);
   padding: 20px;
-  background-color: var(--background-color-primary);
-  border-radius: 0 0 30px 30px;
-  box-shadow: inset 0 -2px 2px #e8eaed;
   font-size: 1.8rem;
   color: var(--gnb-font-color);
   svg {

@@ -29,6 +29,8 @@
     --point-color-1: #1FC3FF;
     --gnb-font-color: #424242;
     --gnb-icon-color: #9a9a9a;
+    --box-shadow-color: #e8eaed;
+    --text-color: #424242;
   }
   
   body[data-theme="dark"] {
@@ -38,4 +40,6 @@
     --point-color-1: #FC8505;
     --gnb-font-color: #fefefe;
     --gnb-icon-color: #6c6c6c;
+    --box-shadow-color: #2a2a2a;
+    --text-color: #fefefe;
   }
