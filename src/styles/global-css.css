@@ -1,0 +1,41 @@
+  :root {
+    --gnbHeight: 100px;
+  }
+
+  :root {
+    width: 100%;
+    height: 99.9%;
+    overflow: hidden;
+  }
+
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  #__next {
+    width: 100%;
+    height: 100%;
+  }
+
+  body,
+  body[data-theme="light"] {
+    --background-color-primary: #fff;
+    --background-color-secondary: #fafafa;
+    --point-color-0: #3b7cf8;
+    --point-color-1: #1FC3FF;
+    --gnb-font-color: #424242;
+    --gnb-icon-color: #9a9a9a;
+  }
+  
+  body[data-theme="dark"] {
+    --background-color-primary: #323232;
+    --background-color-secondary: #545454;
+    --point-color-0: #B05B00;
+    --point-color-1: #FC8505;
+    --gnb-font-color: #fefefe;
+    --gnb-icon-color: #6c6c6c;
+  }

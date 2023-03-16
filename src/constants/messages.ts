@@ -1,0 +1,1 @@
+export const WELCOME_MESSAGE = '안녕하세요! 정재욱입니다.';

@@ -5,6 +5,17 @@ const withPWA = require("next-pwa")({
 	register: true,
 	skipWaiting: false,
   });
-  const nextConfig = withPWA({});
+  const nextConfig = withPWA({
+		images: {
+			remotePatterns: [
+				{
+					protocol: 'https',
+					hostname: 'avatars.githubusercontent.com',
+					port: '',
+					pathname: '/u/**',
+				},
+			],
+		},
+	});
   
   module.exports = nextConfig;
