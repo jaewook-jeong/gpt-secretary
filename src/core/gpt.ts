@@ -9,15 +9,19 @@ const openai = new OpenAIApi(configuration);
 export const getJaewookSecretary = async (content: string): Promise<string> => {
   const completionParams: CreateChatCompletionRequest = {
     model: 'gpt-3.5-turbo',
-    max_tokens: 3000,
+    max_tokens: 1000,
     messages: [
       {
         role: 'system',
+        content: 'You are a helpful assistant',
+      },
+      {
+        role: 'assistant',
         content: process.env.NEXT_PUBLIC_WHO_AM_I as string,
       },
       {
         role: 'user',
-        content,
+        content: `Answer me as Developer Jeong Jae-wook. ${content}`,
       },
     ],
   };
