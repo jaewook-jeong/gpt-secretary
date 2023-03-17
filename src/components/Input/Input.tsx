@@ -2,7 +2,6 @@ import { KeyboardEvent, useCallback, useRef } from 'react';
 import { FiNavigation } from 'react-icons/fi';
 import { Wrapper, ChatTextArea, SendButton } from './Input.styled';
 import { useChattingActions, useChattingStore } from '@/core/store';
-import { getJaewookSecretary } from '@/core/gpt';
 
 const Input = () => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -19,17 +18,20 @@ const Input = () => {
   const onSubmit = useCallback(async () => {
     if (!textareaRef.current) return;
     const message = textareaRef.current.value;
+    if (message.length === 0) return;
     pushUserMessage(message);
-    try {
-      const res = await getJaewookSecretary(message);
-      pushSystemMessage(res);
-      if (textareaRef.current) {
-        textareaRef.current.value = '';
-      }
-    } catch (error) {
-      console.error(error);
+
+    const res = await fetch('/api/openai', {
+      body: JSON.stringify({ content: message }),
+      method: 'post',
+    });
+    if (res.status >= 500) {
       setError();
-      throw new Error('비서가 대답에 어려움을 겪고 있습니다.');
+    }
+    const data = await res.json();
+    pushSystemMessage(data);
+    if (textareaRef.current) {
+      textareaRef.current.value = '';
     }
   }, []);
 
@@ -45,7 +47,7 @@ const Input = () => {
       <ChatTextArea
         ref={textareaRef}
         onChange={onChange}
-        placeholder="저에 대해 궁금한걸 물어보세요!"
+        placeholder={hasError ? '에러가 발생했습니다.' : '저에 대해 궁금한걸 물어보세요!'}
         disabled={disabled}
         onKeyDown={onKeyDown}
       />
