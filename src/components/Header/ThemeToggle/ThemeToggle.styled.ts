@@ -38,6 +38,6 @@ export const ToggleThumb = styled.span<{ $activeTheme?: string }>`
   transition: transform 0.25s ease-in-out;
   transform: ${({ $activeTheme }) =>
     $activeTheme === "dark"
-      ? "translateX(calc(var(--toggle-width) - var(--toggle-height) - 2px))"
+      ? "translateX(calc(var(--toggle-width) - var(--toggle-height) - 3px))"
       : "translateX(1px)"};
 `;

@@ -54,10 +54,10 @@ const Header = () => {
           rel="noreferrer"
           aria-label="Github"
         >
-          <FiGithub size={35} />
+          <FiGithub size={30} />
         </a>
         <a href="mailto:dnrlwo11@gmail.com" aria-label="Gmail">
-          <FiMail size={40} />
+          <FiMail size={35} />
         </a>
         <FiMoreVertical />
       </IconWapper>
