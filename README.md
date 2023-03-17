@@ -1,38 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Open AI를 이용한 [저에 대해 무엇이든 물어보세요!](https://gpt-secretary.vercel.app/)
 
-## Getting Started
+## 소개
 
-First, run the development server:
+### Open AI를 이용하여 `정재욱`에 대해 질문할 수 있는 공간입니다.
+### 모바일화면을 기준으로 제작하였으면 `PWA`로 처리하여 다운로드하여 사용할 수 있습니다.
+### 백엔드 서버 없이 next.js의 api를 활용해 요청을 보냅니다.
+### zustand를 이용해 간단한 상태관리를 처리합니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+<br />
+
+## 사용한 라이브러리
+
+### Next.js
+### OpenAI
+### Zustand
+### next-PWA
+
+<br />
+
+## 실행
+```
+  yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br />
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 버그나 문제가 발생한다면 [이슈](https://github.com/jaewook-jeong/gpt-secretary/issues)에 올려주세요💪🏼
