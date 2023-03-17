@@ -26,13 +26,36 @@ const Input = () => {
 
     const res = await fetch('/api/openai', {
       body: JSON.stringify({ content: message }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
       method: 'post',
     });
-    if (res.status >= 500) {
+
+    if (!res.ok) {
       setError();
+      console.log(res.statusText);
+      throw new Error(res.statusText);
     }
-    const data = await res.json();
-    pushSystemMessage(data);
+
+    const data = res.body;
+    if (!data) {
+      return;
+    }
+
+    const reader = data.getReader();
+    const decoder = new TextDecoder();
+    let done = false;
+    let messageResponse = '';
+
+    while (!done) {
+      const { value, done: doneReading } = await reader.read();
+      done = doneReading;
+      const chunkValue = decoder.decode(value);
+      messageResponse += chunkValue;
+    }
+
+    pushSystemMessage(messageResponse);
   }, []);
 
   const onKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {

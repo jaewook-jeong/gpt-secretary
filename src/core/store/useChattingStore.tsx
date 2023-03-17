@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import { Message } from '@/types';
-import { generateRandomString } from '../utils';
+import { generateRandomString } from '../utils/generateRandomString';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
