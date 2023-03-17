@@ -1,10 +1,13 @@
 import { Message } from '@/types';
-import { MessageFlexWrapper, MessageWrapper } from './Message.styled';
+import { MessageFlexWrapper, MessageWrapper, MessageBodyWrapper, Time } from './Message.styled';
 
 const Message = ({ message: { sendAt, sender, body } }: { message: Message }) => {
   return (
-    <MessageFlexWrapper $role={sender}>
-      <MessageWrapper $role={sender}>{body}</MessageWrapper>
+    <MessageFlexWrapper>
+      <MessageWrapper $role={sender}>
+        <MessageBodyWrapper $role={sender}>{body}</MessageBodyWrapper>
+        <Time>{sendAt.format('HH:mm A')}</Time>
+      </MessageWrapper>
     </MessageFlexWrapper>
   );
 };

@@ -18,4 +18,9 @@ export const Wrapper = styled.section`
   }
 `;
 
-export const SystemTyping = styled.div``;
+export const Date = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+`;

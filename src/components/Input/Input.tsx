@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { KeyboardEvent, useCallback, useRef } from 'react';
 import { FiNavigation } from 'react-icons/fi';
 import { Wrapper, ChatTextArea, SendButton } from './Input.styled';
 import { useChattingActions, useChattingStore } from '@/core/store';
@@ -33,6 +33,12 @@ const Input = () => {
     }
   }, []);
 
+  const onKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter') {
+      onSubmit();
+    }
+  };
+
   const disabled = hasError || isWaiting;
   return (
     <Wrapper>
@@ -41,6 +47,7 @@ const Input = () => {
         onChange={onChange}
         placeholder="저에 대해 궁금한걸 물어보세요!"
         disabled={disabled}
+        onKeyDown={onKeyDown}
       />
       <SendButton type="button" onClick={onSubmit} disabled={disabled}>
         <FiNavigation size={30} color="#fefefe" />
