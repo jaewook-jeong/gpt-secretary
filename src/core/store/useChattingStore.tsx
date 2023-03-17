@@ -55,7 +55,7 @@ export const useChattingStore = create(
         });
       },
       setError: () => {
-        setState({ hasError: true });
+        setState({ hasError: true, isWaiting: false });
       },
     },
   })),
