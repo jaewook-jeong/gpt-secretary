@@ -4,7 +4,7 @@ import { CreateChatCompletionRequest } from 'openai/api';
 const { Configuration, OpenAIApi } = require('openai');
 
 const configuration = new Configuration({
-  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  apiKey: process.env.API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
@@ -19,7 +19,7 @@ const getJaewookSecretary = async (content: string): Promise<string> => {
       },
       {
         role: 'assistant',
-        content: process.env.NEXT_PUBLIC_WHO_AM_I as string,
+        content: process.env.WHO_AM_I as string,
       },
       {
         role: 'user',
