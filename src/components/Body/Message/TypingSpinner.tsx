@@ -43,7 +43,7 @@ const Circle = styled.span`
   animation: ${move} 600ms linear 0ms infinite;
   margin-right: 7px;
 
-  &:first-child {
+  span:first-of-type() {
     position: absolute;
     top: 4px;
     left: 0;
@@ -60,7 +60,7 @@ const Circle = styled.span`
 `;
 
 const TypingSpinner = () => (
-  <MessageFlexWrapper $role="system">
+  <MessageFlexWrapper>
     <MessageWrapper $role="system">
       <Wrapper>
         typing
