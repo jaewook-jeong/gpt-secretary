@@ -1,8 +1,14 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import { Message } from '@/types';
 import { generateRandomString } from '../utils';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.tz.setDefault('Asia/Tokyo');
 
 export type ChattingStoreType = {
   messages: Message[];
