@@ -19,6 +19,7 @@ const SEO = () => {
       title={DEFAULT_TITLE}
       defaultTitle={DEFAULT_TITLE}
       description={DEFAULT_DESCRIPTION}
+      canonical="https://gpt-secretary.vercel.app/"
     />
   );
 };
