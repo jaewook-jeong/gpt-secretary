@@ -51,7 +51,7 @@ const Input = () => {
         disabled={disabled}
         onKeyDown={onKeyDown}
       />
-      <SendButton type="button" onClick={onSubmit} disabled={disabled}>
+      <SendButton type="button" onClick={onSubmit} disabled={disabled} aria-label="send message">
         <FiNavigation size={30} color="#fefefe" />
       </SendButton>
     </Wrapper>
