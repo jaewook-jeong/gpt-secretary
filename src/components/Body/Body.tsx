@@ -10,8 +10,6 @@ const Body = () => {
     <Wrapper>
       {messages.map((message, index) => {
         const isNewDate = index === 0 || message.sendAt.diff(messages[index - 1].sendAt, 'day') > 0;
-        console.log(message.sendAt.diff(messages[index - 1]?.sendAt, 'day'), isNewDate);
-
         return (
           <>
             {isNewDate && <Date>{message.sendAt.format('YYYY년MM월DD일')}</Date>}
