@@ -20,6 +20,9 @@ const Input = () => {
     const message = textareaRef.current.value;
     if (message.length === 0) return;
     pushUserMessage(message);
+    if (textareaRef.current) {
+      textareaRef.current.value = '';
+    }
 
     const res = await fetch('/api/openai', {
       body: JSON.stringify({ content: message }),
@@ -30,9 +33,6 @@ const Input = () => {
     }
     const data = await res.json();
     pushSystemMessage(data);
-    if (textareaRef.current) {
-      textareaRef.current.value = '';
-    }
   }, []);
 
   const onKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
