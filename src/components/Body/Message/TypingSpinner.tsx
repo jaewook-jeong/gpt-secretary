@@ -5,6 +5,7 @@ import { MessageWrapper, MessageFlexWrapper } from './Message.styled';
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  padding-left: 10px;
   text-align: center;
   color: var(--point-color-0);
 `;
@@ -43,7 +44,7 @@ const Circle = styled.span`
   animation: ${move} 600ms linear 0ms infinite;
   margin-right: 7px;
 
-  span:first-of-type() {
+  &:first-of-type {
     position: absolute;
     top: 4px;
     left: 0;
