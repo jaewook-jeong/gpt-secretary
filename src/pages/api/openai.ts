@@ -11,7 +11,7 @@ const openai = new OpenAIApi(configuration);
 const getJaewookSecretary = async (content: string): Promise<string> => {
   const completionParams: CreateChatCompletionRequest = {
     model: 'gpt-3.5-turbo',
-    max_tokens: 1000,
+    max_tokens: 2048,
     messages: [
       {
         role: 'system',
