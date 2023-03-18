@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Body } from '@/components/Body';
 import Header from '@/components/Header/Header';
 import { Input } from '@/components/Input';
+import { useFingerprint } from '@/core/hooks';
 
 const Layout = styled.div`
   position: relative;
@@ -18,6 +19,7 @@ const Layout = styled.div`
 `;
 
 export default function Home() {
+  useFingerprint();
   return (
     <Layout>
       <Header />

@@ -1,5 +1,5 @@
 import { createParser, ParsedEvent, ReconnectInterval } from "eventsource-parser";
-import { CreateChatCompletionRequest } from "@/types";
+import { CreateChatCompletionRequest } from "@/core/types";
 
 export async function OpenAIStream(payload: CreateChatCompletionRequest) {
   const encoder = new TextEncoder();

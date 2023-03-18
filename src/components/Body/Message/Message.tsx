@@ -1,4 +1,4 @@
-import { Message } from '@/types';
+import { Message } from '@/core/types';
 import { MessageFlexWrapper, MessageWrapper, MessageBodyWrapper, Time } from './Message.styled';
 
 const Message = ({ message: { sendAt, sender, body } }: { message: Message }) => {
