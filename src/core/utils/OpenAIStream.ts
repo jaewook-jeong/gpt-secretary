@@ -33,7 +33,6 @@ export async function OpenAIStream(payload: CreateChatCompletionRequest) {
             if (counter < 2 && (text?.match(/\n/) || []).length) {
               return;
             }
-            console.log(text);
             const queue = encoder.encode(text);
             controller.enqueue(queue);
             counter++;
