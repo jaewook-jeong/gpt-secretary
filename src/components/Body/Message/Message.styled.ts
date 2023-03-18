@@ -1,6 +1,6 @@
 import { TABLET_BREAK_POINT } from '@/constants';
 import { mediaQuery } from '@/styles/mediaQuery';
-import { Role } from '@/types';
+import { Role } from '@/core/types';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 

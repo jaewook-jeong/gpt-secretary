@@ -1,5 +1,5 @@
 import { OpenAIStream } from '@/core/utils/OpenAIStream';
-import { CreateChatCompletionRequest } from '@/types';
+import { CreateChatCompletionRequest } from '@/core/types';
 
 export const config = {
   runtime: "edge",
