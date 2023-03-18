@@ -8,7 +8,7 @@ export const config = {
 export default async function handler(
   req: Request,
 ) {
-  const { content } = (await req.json()) as { content: string };
+  const { content, fingerprint } = (await req.json()) as { content: string, fingerprint: string };
   const payload: CreateChatCompletionRequest = {
     model: 'gpt-3.5-turbo',
     max_tokens: 2048,
@@ -31,6 +31,7 @@ export default async function handler(
       },
     ],
     stream: true,
+    user: fingerprint,
   };
   const stream = await OpenAIStream(payload);
   return new Response(stream);

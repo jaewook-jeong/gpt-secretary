@@ -3,7 +3,7 @@ import { devtools } from 'zustand/middleware';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
-import { Message } from '@/types';
+import { Message } from '@/core/types';
 import { generateRandomString } from '../utils/generateRandomString';
 
 dayjs.extend(utc);
@@ -12,18 +12,21 @@ dayjs.tz.setDefault('Asia/Tokyo');
 
 export type ChattingStoreType = {
   messages: Message[];
+  fingerprint: string;
   isWaiting: boolean;
   hasError: boolean;
   actions: {
     pushUserMessage: (content: string) => void;
     pushSystemMessage: (content: string) => void;
     setError: () => void;
+    setFingerprint: (fingerprint: string) => void;
   };
 };
 
 export const useChattingStore = create(
   devtools<ChattingStoreType>((setState, getState) => ({
     messages: [],
+    fingerprint: '',
     isWaiting: false,
     hasError: false,
     actions: {
@@ -55,6 +58,9 @@ export const useChattingStore = create(
       },
       setError: () => {
         setState({ hasError: true, isWaiting: false });
+      },
+      setFingerprint: (fingerprint) => {
+        setState({ fingerprint });
       },
     },
   })),

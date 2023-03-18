@@ -5,7 +5,7 @@ import { useChattingActions, useChattingStore } from '@/core/store';
 
 const Input = () => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const { hasError, isWaiting } = useChattingStore((state) => state);
+  const { hasError, isWaiting, fingerprint } = useChattingStore((state) => state);
   const { pushUserMessage, pushSystemMessage, setError } = useChattingActions();
 
   const onChange = () => {
@@ -25,7 +25,7 @@ const Input = () => {
     }
 
     const res = await fetch('/api/openai', {
-      body: JSON.stringify({ content: message }),
+      body: JSON.stringify({ content: message, fingerprint }),
       headers: {
         'Content-Type': 'application/json',
       },
