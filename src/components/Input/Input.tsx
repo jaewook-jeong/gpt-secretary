@@ -25,7 +25,7 @@ const Input = () => {
     }
 
     const res = await fetch('/api/openai', {
-      body: JSON.stringify({ content: message, fingerprint }),
+      body: JSON.stringify({ content: message, fingerprint: fingerprint }),
       headers: {
         'Content-Type': 'application/json',
       },
