@@ -22,6 +22,10 @@ export default async function handler(
         content: process.env.WHO_AM_I as string,
       },
       {
+        role: 'assistant',
+        content: process.env.MORE_DETAIL as string,
+      },
+      {
         role: 'user',
         content: `Answer me as Developer Jeong Jae-wook. ${content}`,
       },
