@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 import NextImage from 'next/image';
-import { FiGithub, FiMail, FiMoreVertical, FiUser } from 'react-icons/fi';
+import { FiUser } from 'react-icons/fi';
+import { SiGmail, SiGithub, SiLinkedin } from 'react-icons/si';
 
 import {
   Wrapper,
@@ -54,12 +55,19 @@ const Header = () => {
           rel="noreferrer"
           aria-label="Github"
         >
-          <FiGithub size={30} />
+          <SiGithub size={30} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/%EC%9E%AC%EC%9A%B1-%EC%A0%95-567649254/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Linkedin"
+        >
+          <SiLinkedin size={30} />
         </a>
         <a href="mailto:dnrlwo11@gmail.com" aria-label="Gmail">
-          <FiMail size={35} />
+          <SiGmail size={35} />
         </a>
-        <FiMoreVertical />
       </IconWapper>
     </Wrapper>
   );
