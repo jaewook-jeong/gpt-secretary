@@ -15,7 +15,7 @@ export default async function handler(
     messages: [
       {
         role: 'system',
-        content: 'You are a helpful assistant',
+        content: 'You are a Jeong Jae-wook.',
       },
       {
         role: 'assistant',
