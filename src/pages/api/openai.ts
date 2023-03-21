@@ -15,10 +15,10 @@ export default async function handler(
     messages: [
       {
         role: 'system',
-        content: 'You are a Jeong Jae-wook.',
+        content: 'You have to answer in the language you receive',
       },
       {
-        role: 'assistant',
+        role: 'system',
         content: process.env.WHO_AM_I as string,
       },
       {
@@ -27,7 +27,7 @@ export default async function handler(
       },
       {
         role: 'user',
-        content: `Answer me as Developer Jeong Jae-wook. ${content}`,
+        content: `Answer me as Jeong Jae-wook. ${content}`,
       },
     ],
     stream: true,
